@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Tour Multiresolution</title>
+    <title>Panorama-test</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
     <style>
@@ -17,10 +17,10 @@
 
 <script>
 pannellum.viewer('panorama', {   
-    ""default": {
-        "firstScene": "A",
-        "author": "Me",
-        "sceneFadeDuration": 1000,
+    "default": {
+        "firstScene": "A", // Da quale stanza si inizia?
+        "author": "Il Tuo Nome",
+        "sceneFadeDuration": 1000, // Effetto dissolvenza tra le stanze (in millisecondi)
         "autoLoad": true
     },
 
@@ -28,18 +28,8 @@ pannellum.viewer('panorama', {
         // --- PRIMA STANZA ---
         "A": {
             "title": "A",
-            "type": "multires", // <--- FONDAMENTALE: cambia tipo in multires
-            
-// Apri output_xxx/config.json e copia qui i dati.
-            // ATTENZIONE: Devi modificare la riga "path" aggiungendo il nome della cartella!
-            "multiRes": {
-                "path": "output_folder2/%l/%s%y_%x",
-                "fallbackPath": "output_folder2/fallback/%s",
-                "extension": "jpg",
-                "tileResolution": 512,
-                "maxLevel": 4,
-                "cubeResolution": 2600
-            },
+            "panorama": "A.jpg", 
+            "autoRotate": -2,
             "hotSpots": [
                 {
                     "pitch": -5,    // Posizione Verticale (Su/Giù)
